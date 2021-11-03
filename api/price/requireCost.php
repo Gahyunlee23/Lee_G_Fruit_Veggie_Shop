@@ -71,7 +71,7 @@ if (isset($list) && $list !== '' && $list !== NULL) {
         //redirect
         header('Location: /index.php?price=' . $price);
     } else {
-        $exist_msg = '찾으시는' . $msg_category . '은(는) 목록에 존재하지 않습니다!';
+        $exist_msg = '검색하신 ' . $list . '은(는) ' . $msg_category . ' 목록에 존재하지 않습니다!';
         echo "<script>alert('$exist_msg');</script>";
         echo "<a href='/index.php'>Back</a>";
     }
