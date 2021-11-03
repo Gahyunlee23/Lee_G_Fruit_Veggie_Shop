@@ -5,12 +5,13 @@ $list = $_POST['list'];
 //base api url
 $base_url = '.api.postype.net';
 $list_api = 'http://' . $category . $base_url;
+$token_url = $list_api . '/token';
 
 //목록 확인과 가격 확인을 위한 토큰 발급 api build
 if($category === 'fruit') {
     // 과일 가게 토큰을 발급
     $cURLConnection = curl_init();
-    curl_setopt($cURLConnection, CURLOPT_URL, 'http://fruit.api.postype.net/token');
+    curl_setopt($cURLConnection, CURLOPT_URL, $token_url);
     curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($cURLConnection);
     curl_close($cURLConnection);
@@ -23,6 +24,13 @@ if($category === 'fruit') {
 
 } else {
     //채소가게 토큰 발급
+//    file_get_contents('http://vegetable.api.postype.net/token');
+//    $madeUp1 = $http_response_header[5];
+//    $madeUp2 = explode(':', $madeUp1);
+//    $madeUp3 = explode(';', $madeUp2[1]);
+//    $madeUp4 = explode('=', $madeUp3[0]);
+//    var_dump($madeUp4[1]);
+
     $url = 'http://vegetable.api.postype.net/token';
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
