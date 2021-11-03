@@ -71,13 +71,13 @@ if (isset($list) && $list !== '' && $list !== NULL) {
         //redirect
         header('Location: /index.php?price=' . $price);
     } else {
-        $exist_msg = '검색하신 ' . $list . '은(는) ' . $msg_category . ' 목록에 존재하지 않습니다!';
+        $exist_msg = '검색하신 ' . $list . '은(는) ' . $msg_category . ' 목록에 존재하지 않습니다.';
         echo "<script>alert('$exist_msg');</script>";
         echo "<a href='/index.php'>Back</a>";
     }
 } else {
     echo '<script type="text/javascript">';
-    echo 'alert("가격 검색을 위해, 원하는' . $msg_category . '의 이름을 입력해 주세요!");';
+    echo 'alert("가격 검색을 위해, 원하는 ' . $msg_category . '의 이름을 입력해 주세요.");';
     echo 'document.location.href = "/index.php";';
     echo '</script>';
 }
